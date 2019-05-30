@@ -4,12 +4,12 @@
     {
         static void Main(string[] args)
         {
-            var workflow = new WorkFlowEngine();
-            workflow.RegisterActivity(new VideoUploader());
-            workflow.RegisterActivity(new VideoUploadNotifier());
-            workflow.RegisterActivity(new EmailNotifier());
-            workflow.RegisterActivity(new DatabaseUpdater());
-            workflow.Run();
+            var workflow = new Workflow();
+            workflow.Add(new VideoUploader());
+            workflow.Add(new VideoUploadNotifier());
+            workflow.Add(new EmailNotifier());
+            workflow.Add(new DatabaseUpdater());
+            WorkflowEngine.Run(workflow);
         }
     }
 }

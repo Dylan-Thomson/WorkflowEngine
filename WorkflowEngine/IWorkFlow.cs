@@ -1,11 +1,9 @@
 ﻿namespace WorkflowEngine
 {
-    public interface IWorkFlow
+    public interface IWorkflow
     {
-        void RegisterActivity(IActivity activity);
+        void Add(IActivity activity);
 
-        void RemoveActivity(IActivity activity);
-
-        void Run();
+        void Remove(IActivity activity);
     }
 }

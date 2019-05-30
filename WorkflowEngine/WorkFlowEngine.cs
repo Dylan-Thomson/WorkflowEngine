@@ -1,29 +1,10 @@
-﻿using System.Collections.Generic;
-
-namespace WorkflowEngine
+﻿namespace WorkflowEngine
 {
-    public class WorkFlowEngine : IWorkFlow
+    public class WorkflowEngine
     {
-        private readonly IList<IActivity> _activities;
-
-        public WorkFlowEngine()
+        public static void Run(Workflow workflow)
         {
-            _activities = new List<IActivity>();
-        }
-
-        public void RegisterActivity(IActivity activity)
-        {
-            _activities.Add(activity);
-        }
-
-        public void RemoveActivity(IActivity activity)
-        {
-            _activities.Remove(activity);
-        }
-
-        public void Run()
-        {
-            foreach (var activity in _activities)
+            foreach (var activity in workflow.GetActivities())
             {
                 activity.Execute();
             }
