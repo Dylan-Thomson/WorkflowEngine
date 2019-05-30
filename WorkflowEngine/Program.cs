@@ -6,7 +6,9 @@ namespace WorkflowEngine
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var workflow = new Workflow();
+            workflow.RegisterActivity(new VideoUploader());
+            workflow.Run();
         }
     }
 }
