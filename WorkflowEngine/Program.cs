@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            var workflow = new Workflow();
+            var workflow = new WorkFlowEngine();
             workflow.RegisterActivity(new VideoUploader());
             workflow.RegisterActivity(new VideoUploadNotifier());
             workflow.RegisterActivity(new EmailNotifier());

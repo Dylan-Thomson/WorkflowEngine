@@ -2,11 +2,11 @@
 
 namespace WorkflowEngine
 {
-    public class Workflow
+    public class WorkFlowEngine : IWorkFlow
     {
         private readonly IList<IActivity> _activities;
 
-        public Workflow()
+        public WorkFlowEngine()
         {
             _activities = new List<IActivity>();
         }
@@ -14,6 +14,11 @@ namespace WorkflowEngine
         public void RegisterActivity(IActivity activity)
         {
             _activities.Add(activity);
+        }
+
+        public void RemoveActivity(IActivity activity)
+        {
+            _activities.Remove(activity);
         }
 
         public void Run()
