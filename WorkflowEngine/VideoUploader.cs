@@ -8,7 +8,7 @@ namespace WorkflowEngine
         {
             // Video upload logic
             // ...
-            Console.WriteLine("Uploading video.");
+            Console.WriteLine("Uploading video....");
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WorkflowEngine
+﻿namespace WorkflowEngine
 {
     class Program
     {
@@ -8,6 +6,9 @@ namespace WorkflowEngine
         {
             var workflow = new Workflow();
             workflow.RegisterActivity(new VideoUploader());
+            workflow.RegisterActivity(new VideoUploadNotifier());
+            workflow.RegisterActivity(new EmailNotifier());
+            workflow.RegisterActivity(new DatabaseUpdater());
             workflow.Run();
         }
     }
